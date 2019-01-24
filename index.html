@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <meta name="description" content="archive for the discord server the boys play">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>
+            the boys play <span>archive</span>
+        </h1>
+        <nav>
+        
+           <a class="active" href="/">pictures</a>
+        
+           <a class="" href="/gifs.html">gifs</a>
+        
+           <a class="" href="/videos.html">videos</a>
+        
+      </nav>
+        <section>
+          <input type="text" placeholder="search">
+<div class="collection">
+    
+    <div class="entry pictures " data-name="enderman takes the kaaba">
+        <div class="content">
+            
+                    <img src="https://i.redd.it/sogdptxs05221.jpg" title="enderman takes the kaaba">
+                
+            <div class="overlay">
+                <span class="name">enderman takes the kaaba</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="muffin into overdrive">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/Ypyihrm.png" title="muffin into overdrive">
+                
+            <div class="overlay">
+                <span class="name">muffin into overdrive</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="defeat the baby">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/gMLTuxH.png" title="defeat the baby">
+                
+            <div class="overlay">
+                <span class="name">defeat the baby</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="terf in the car">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/QSHJbEE.png" title="terf in the car">
+                
+            <div class="overlay">
+                <span class="name">terf in the car</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="alex">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/Cw6yLjp.png" title="alex">
+                
+            <div class="overlay">
+                <span class="name">alex</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="cammy the incel">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/FpDosP9.png" title="cammy the incel">
+                
+            <div class="overlay">
+                <span class="name">cammy the incel</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry pictures " data-name="mad amy">
+        <div class="content">
+            
+                    <img src="https://i.imgur.com/xXNKonk.png" title="mad amy">
+                
+            <div class="overlay">
+                <span class="name">mad amy</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+<script>
+
+$(function() {
+    var gifs;
+
+    window.onload = function() {
+        gifs = Gifffer();
+    }
+    $(".entry").click(function() {
+        var $this = $(this);
+
+        $this.toggleClass('open');
+
+        if($this.hasClass("videos file")) {
+            var video = $this.find('video')[0];
+
+            video.controls = $this.hasClass("open");
+
+            if(!$this.hasClass("open")) {
+                video.pause();
+            }
+            
+        } else if($this.hasClass("gifs") && !$this.hasClass("open") && $this.find("img").length > 0) {
+            gifs[$this.index()].click();
+            $this.toggleClass('open');
+        }
+    });
+
+    $("input").on("change paste keyup", function() {
+        var filter = $(this).val();
+
+        $(".entry.hidden").removeClass('hidden');
+
+        $(".entry").each(function() {
+            if($(this).attr('data-name').indexOf(filter) == -1) {
+                $(this).addClass('hidden');
+            }
+        })
+    });
+
+})
+</script>
+        </section>
+    </div>
+  </body>
+</html>

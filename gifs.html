@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <meta name="description" content="archive for the discord server the boys play">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>
+            the boys play <span>archive</span>
+        </h1>
+        <nav>
+        
+           <a class="" href="/">pictures</a>
+        
+           <a class="active" href="/gifs.html">gifs</a>
+        
+           <a class="" href="/videos.html">videos</a>
+        
+      </nav>
+        <section>
+          <input type="text" placeholder="search">
+<div class="collection">
+    
+    <div class="entry gifs " data-name="old lady fucking">
+        <div class="content">
+            
+                    <div class="gif-wrapper">
+                        <img data-gifffer="https://cdn.discordapp.com/attachments/352274815635292174/500109536732905472/gmagik.gif" title="old lady fucking">
+                    </div>
+                
+            <div class="overlay">
+                <span class="name">old lady fucking</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+<script>
+
+$(function() {
+    var gifs;
+
+    window.onload = function() {
+        gifs = Gifffer();
+    }
+    $(".entry").click(function() {
+        var $this = $(this);
+
+        $this.toggleClass('open');
+
+        if($this.hasClass("videos file")) {
+            var video = $this.find('video')[0];
+
+            video.controls = $this.hasClass("open");
+
+            if(!$this.hasClass("open")) {
+                video.pause();
+            }
+            
+        } else if($this.hasClass("gifs") && !$this.hasClass("open") && $this.find("img").length > 0) {
+            gifs[$this.index()].click();
+            $this.toggleClass('open');
+        }
+    });
+
+    $("input").on("change paste keyup", function() {
+        var filter = $(this).val();
+
+        $(".entry.hidden").removeClass('hidden');
+
+        $(".entry").each(function() {
+            if($(this).attr('data-name').indexOf(filter) == -1) {
+                $(this).addClass('hidden');
+            }
+        })
+    });
+
+})
+</script>
+        </section>
+    </div>
+  </body>
+</html>

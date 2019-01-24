@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Oxygen:400,700");
+@import url("https://fonts.googleapis.com/css?family=Biryani:600,900");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial; }
+
+/* Remove the stupid outer glow in Webkit */
+input:focus {
+  outline: 0; }
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px; }
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box; }
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none; }
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto; }
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none; }
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto; }
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top; }
+
+button:focus {
+  outline: none; }
+
+BODY {
+  background: #100e1e;
+  font-family: Oxygen, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: white; }
+
+.container {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto; }
+
+h1 {
+  margin: 2em 0 1em;
+  width: 100%;
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Biryani', Helvetica, Arial, sans-serif;
+  font-weight: 600; }
+  h1 span {
+    font-weight: bold;
+    font-weight: 900; }
+
+nav a {
+  display: inline-block;
+  width: auto;
+  font-size: 1.7em;
+  color: #2c2653;
+  padding: 0 1.25em;
+  line-height: 2.8em;
+  text-decoration: none;
+  margin-right: 0.25em; }
+  nav a.active {
+    background: #19152f;
+    color: #4c4090;
+    font-weight: bold; }
+  nav a:hover:not(.active) {
+    background: #19152f;
+    color: #4c4090;
+    opacity: 0.6; }
+
+section {
+  background: #19152f;
+  padding: 1.5em 1em 3em; }
+
+input {
+  border: 0;
+  font-size: 1.5em;
+  padding: 0.75em 1.2em;
+  background: #120f24;
+  margin-bottom: 1em;
+  font-family: Oxygen, Helvetica, Arial, sans-serif;
+  color: white;
+  width: 33%; }
+  input::placeholder {
+    color: #231d4b; }
+
+p {
+  font-size: 2em;
+  text-align: center;
+  padding: 2em 0;
+  color: #4c4090; }
+
+.collection {
+  width: 101%;
+  margin-left: -1%; }
+  .collection .entry {
+    width: 24%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background: #120f23; }
+    .collection .entry.hidden {
+      display: none; }
+    .collection .entry .content {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0; }
+    .collection .entry img, .collection .entry video, .collection .entry .gif-wrapper {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .collection .entry .youtube {
+      position: relative;
+      height: 130%;
+      top: -15%; }
+      .collection .entry .youtube iframe, .collection .entry .youtube .buffer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .collection .entry .youtube .buffer {
+        z-index: 10; }
+    .collection .entry::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%; }
+    .collection .entry.open {
+      z-index: 20;
+      position: inherit; }
+      .collection .entry.open .content {
+        z-index: 21;
+        background: rgba(0, 0, 0, 0.7); }
+        .collection .entry.open .content > img, .collection .entry.open .content video, .collection .entry.open .content .youtube, .collection .entry.open .content .gif-wrapper {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%); }
+        .collection .entry.open .content img, .collection .entry.open .content video, .collection .entry.open .content .gif-wrapper {
+          max-height: 60rem;
+          max-width: 60rem;
+          height: auto;
+          min-width: 20rem;
+          width: auto;
+          object-fit: inherit; }
+        .collection .entry.open .content .youtube {
+          width: 60rem;
+          height: 0;
+          padding-bottom: 56.25%; }
+          .collection .entry.open .content .youtube .buffer {
+            display: none; }
+      .collection .entry.open .overlay {
+        display: block;
+        width: auto;
+        position: absolute;
+        padding: 1.2em 1.4em;
+        font-size: 1.6em;
+        background: rgba(0, 0, 0, 0.8);
+        color: #4c4090;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%); }
+        .collection .entry.open .overlay .name {
+          font-weight: bold;
+          color: white; }
+        .collection .entry.open .overlay .by {
+          font-weight: bold; }
+  .collection::after {
+    content: "";
+    clear: both;
+    display: table; }

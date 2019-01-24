@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <meta name="description" content="archive for the discord server the boys play">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>
+            the boys play <span>archive</span>
+        </h1>
+        <nav>
+        
+           <a class="" href="/">pictures</a>
+        
+           <a class="" href="/gifs.html">gifs</a>
+        
+           <a class="active" href="/videos.html">videos</a>
+        
+      </nav>
+        <section>
+          <input type="text" placeholder="search">
+<div class="collection">
+    
+    <div class="entry videos file" data-name="hooo aaaa">
+        <div class="content">
+            
+                    
+                        <video src="https://cdn.discordapp.com/attachments/439741933598932996/537789357008879647/imzcwPFt-ZgzfFRo.mp4" type="video/mp4"></video>
+                        
+            
+            <div class="overlay">
+                <span class="name">hooo aaaa</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry videos file" data-name="tonight we drinking from the bong">
+        <div class="content">
+            
+                    
+                        <video src="https://cdn.discordapp.com/attachments/439741933598932996/537792670374952961/tumblr_owi9d4cRvr1rcp8pp.mp4" type="video/mp4"></video>
+                        
+            
+            <div class="overlay">
+                <span class="name">tonight we drinking from the bong</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry videos file" data-name="dils suicide">
+        <div class="content">
+            
+                    
+                        <video src="https://cdn.discordapp.com/attachments/439741933598932996/537794114251391005/q25r7_1.mp4" type="video/mp4"></video>
+                        
+            
+            <div class="overlay">
+                <span class="name">dils suicide</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="entry videos youtube" data-name="the corn saved my life">
+        <div class="content">
+            
+                    
+                        <div class="youtube">
+                            <div class="buffer"></div>
+                            <iframe id="ytplayer" type="text/html" width="1280" height="720"
+                            src="https://www.youtube.com/embed/OXGegua8dwI?disablekb=1&fs=0&"
+                            frameborder="0"></iframe>
+                        </div>
+                    
+            
+            <div class="overlay">
+                <span class="name">the corn saved my life</span> saved by <span class="by">sebby</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+<script>
+
+$(function() {
+    var gifs;
+
+    window.onload = function() {
+        gifs = Gifffer();
+    }
+    $(".entry").click(function() {
+        var $this = $(this);
+
+        $this.toggleClass('open');
+
+        if($this.hasClass("videos file")) {
+            var video = $this.find('video')[0];
+
+            video.controls = $this.hasClass("open");
+
+            if(!$this.hasClass("open")) {
+                video.pause();
+            }
+            
+        } else if($this.hasClass("gifs") && !$this.hasClass("open") && $this.find("img").length > 0) {
+            gifs[$this.index()].click();
+            $this.toggleClass('open');
+        }
+    });
+
+    $("input").on("change paste keyup", function() {
+        var filter = $(this).val();
+
+        $(".entry.hidden").removeClass('hidden');
+
+        $(".entry").each(function() {
+            if($(this).attr('data-name').indexOf(filter) == -1) {
+                $(this).addClass('hidden');
+            }
+        })
+    });
+
+})
+</script>
+        </section>
+    </div>
+  </body>
+</html>

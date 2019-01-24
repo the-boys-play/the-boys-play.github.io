@@ -140,7 +140,7 @@ button:focus {
   outline: none; }
 
 BODY {
-  background: #100e1e;
+  background: #0b0a15;
   font-family: Oxygen, Helvetica, Arial, sans-serif;
   font-size: 1em;
   color: white; }
@@ -165,7 +165,7 @@ nav a {
   display: inline-block;
   width: auto;
   font-size: 1.7em;
-  color: #2c2653;
+  color: #2e2757;
   padding: 0 1.25em;
   line-height: 2.8em;
   text-decoration: none;
@@ -246,6 +246,7 @@ p {
       position: inherit; }
       .collection .entry.open .content {
         z-index: 21;
+        position: fixed;
         background: rgba(0, 0, 0, 0.7); }
         .collection .entry.open .content > img, .collection .entry.open .content video, .collection .entry.open .content .youtube, .collection .entry.open .content .gif-wrapper {
           position: absolute;
